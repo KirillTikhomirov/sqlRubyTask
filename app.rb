@@ -10,3 +10,9 @@ DB = Sequel.connect(:adapter => 'mysql2',
                     :database => 'sqlTask',
                     :user => 'root',
                     :password => '')
+
+DB.create_table :test do
+  primary_key :id
+  String :name
+  Float :price
+end
