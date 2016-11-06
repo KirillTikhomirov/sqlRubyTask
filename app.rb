@@ -7,12 +7,50 @@ require "yaml"
 
 DB = Sequel.connect(:adapter => 'mysql2',
                     :host => 'localhost',
-                    :database => 'sqlTask',
+                    :database => 'sqlTask_ruby',
                     :user => 'root',
                     :password => '')
 
-DB.create_table :test do
+DB.create_table :cities do
+  primary_key :id
+  String :name_city
+  String :name_country
+end
+
+cities = DB[:cities]
+
+cities.insert(:name_city => 'Erfurt', :name_country => 'Germany')
+cities.insert(:name_city => 'San-Francisco', 'USA')
+cities.insert(:name_city => 'Capetown', :name_country => 'South Africa')
+cities.insert(:name_city => 'Pekin', :name_country => 'China')
+cities.insert(:name_city => 'Essen', :name_country => 'Germany')
+cities.insert(:name_city => 'Gamburg', :name_country => 'Germany')
+cities.insert(:name_city => 'Atlanta', :name_country => 'USA')
+
+DB.create_table :students do
   primary_key :id
   String :name
-  Float :price
+  String :surname
+  Integer :course
+  String :gender
+  foreign_key :id_city
 end
+
+students = DB[:students]
+
+students.insert
+(:name => 'Mark', :surname => 'Schmidt', :course => '3', :gender => 'man', :id_city => '1'),
+(:name => 'Helen', :surname => 'Hunt', :course => '2', :gender => 'woman', :id_city => '2'),
+(:name => 'Matumba', :surname => 'Zuko', :course => '4', :gender => 'man', :id_city => '3'),
+(:name => 'Rin', :surname => 'Kupo', :course => '4', :gender => 'woman', :id_city => '3'),
+(:name => 'Zhen', :surname => 'Chi Bao', :course => '2', :gender => 'man', :id_city => '4'),
+(:name => 'Peter', :surname => 'Zimmer', :course => '3', :gender => 'man', :id_city => '5'),
+(:name => 'Hanz', :surname => 'Mueller', :course => '4', :gender => 'man', :id_city => '6'),
+(:name => 'Alisa', :surname => 'Kepler', :course => '4', :gender => 'woman', :id_city => '1'),
+(:name => 'Anna', :surname => 'Madavie', :course => '2', :gender => 'woman', :id_city => '7');
+
+
+#запросы по задачам:
+# 1. сколько всего студентов приехало к нам учиться
+# SELECT COUNT(name) FROM Students;
+# Students.count
