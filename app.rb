@@ -20,7 +20,7 @@ end
 cities = DB[:cities]
 
 cities.insert(:name_city => 'Erfurt', :name_country => 'Germany')
-cities.insert(:name_city => 'San-Francisco', 'USA')
+cities.insert(:name_city => 'San-Francisco', :name_country => 'USA')
 cities.insert(:name_city => 'Capetown', :name_country => 'South Africa')
 cities.insert(:name_city => 'Pekin', :name_country => 'China')
 cities.insert(:name_city => 'Essen', :name_country => 'Germany')
@@ -38,16 +38,15 @@ end
 
 students = DB[:students]
 
-students.insert
-(:name => 'Mark', :surname => 'Schmidt', :course => '3', :gender => 'man', :id_city => '1'),
-(:name => 'Helen', :surname => 'Hunt', :course => '2', :gender => 'woman', :id_city => '2'),
-(:name => 'Matumba', :surname => 'Zuko', :course => '4', :gender => 'man', :id_city => '3'),
-(:name => 'Rin', :surname => 'Kupo', :course => '4', :gender => 'woman', :id_city => '3'),
-(:name => 'Zhen', :surname => 'Chi Bao', :course => '2', :gender => 'man', :id_city => '4'),
-(:name => 'Peter', :surname => 'Zimmer', :course => '3', :gender => 'man', :id_city => '5'),
-(:name => 'Hanz', :surname => 'Mueller', :course => '4', :gender => 'man', :id_city => '6'),
-(:name => 'Alisa', :surname => 'Kepler', :course => '4', :gender => 'woman', :id_city => '1'),
-(:name => 'Anna', :surname => 'Madavie', :course => '2', :gender => 'woman', :id_city => '7');
+students.insert(:name => 'Mark', :surname => 'Schmidt', :course => '3', :gender => 'man', :id_city => '1')
+students.insert(:name => 'Helen', :surname => 'Hunt', :course => '2', :gender => 'woman', :id_city => '2')
+students.insert(:name => 'Matumba', :surname => 'Zuko', :course => '4', :gender => 'man', :id_city => '3')
+students.insert(:name => 'Rin', :surname => 'Kupo', :course => '4', :gender => 'woman', :id_city => '3')
+students.insert(:name => 'Zhen', :surname => 'Chi Bao', :course => '2', :gender => 'man', :id_city => '4')
+students.insert(:name => 'Peter', :surname => 'Zimmer', :course => '3', :gender => 'man', :id_city => '5')
+students.insert(:name => 'Hanz', :surname => 'Mueller', :course => '4', :gender => 'man', :id_city => '6')
+students.insert(:name => 'Alisa', :surname => 'Kepler', :course => '4', :gender => 'woman', :id_city => '1')
+students.insert(:name => 'Anna', :surname => 'Madavie', :course => '2', :gender => 'woman', :id_city => '7')
 
 
 #запросы по задачам:
